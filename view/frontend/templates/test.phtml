@@ -1,0 +1,25 @@
+<!-- JsLayout: likipe_testdata -->
+<div data-role="likipe-private-content" data-bind="scope: 'likipe_testdata'">
+    <!-- testdata.js: testnewdata -->
+    <!-- var: likipe_privatecontentok -->
+    <span class="content-type" data-bind="text: likipe_privatecontentok().testnewdata">OKAY</span>
+
+    <a href="<?php echo $block->getUrl('privatecontent/index/index');?>?test=1"> > Refresh not ok</a>
+
+
+    <form action="<?php echo $block->getUrl('privatecontent/index/index');?>" method="post">
+        <input type="hidden" name="test" value="1">
+        <input type="submit" name="" value="Refresh ok">
+    </form>
+
+</div>
+<!--
+{"components":{"likipe_testdata":{"component":"Likipe_PrivateContent\/js\/view\/testnewdata"}}} 
+-->
+<script type="text/x-magento-init">
+{
+    "[data-role=likipe-private-content]": {
+        "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout(); ?>
+    }
+}
+</script>
